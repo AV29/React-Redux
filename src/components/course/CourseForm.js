@@ -1,8 +1,9 @@
 import React, {PropTypes} from 'react';
 import TextInput from '../common/TextInput';
 import SelectInput from '../common/SelectInput';
+import LoadingDots from '../common/LoadingDots';
 
-const CourseForm = ({course, allAuthors, onSave, onChange, loading, errors}) => {
+const CourseForm = ({course, allAuthors, onSave, onChange, saving, errors}) => {
   return (
     <form>
       <h1>Manage Course</h1>
@@ -40,13 +41,14 @@ const CourseForm = ({course, allAuthors, onSave, onChange, loading, errors}) => 
         error={errors.length}
       />
 
-      <input
+      <button
         type="submit"
-        disabled={loading}
-        value={loading ? 'Saving...' : 'Save'} 
+        disabled={saving}
         className="btn btn-primary"
         onClick={onSave}
-      />
+      >  Save
+        {saving && (<LoadingDots interval={100} dots={9}/>)}
+      </button>
 
     </form>
   );
@@ -57,8 +59,8 @@ CourseForm.propTypes = {
   allAuthors: React.PropTypes.array,
   onSave: React.PropTypes.func.isRequired,
   onChange: React.PropTypes.func.isRequired,
-  loading: React.PropTypes.bool,
-  errors: React.PropTypes.object
+  errors: React.PropTypes.object,
+  saving: React.PropTypes.bool
 };
 
 export default CourseForm;
