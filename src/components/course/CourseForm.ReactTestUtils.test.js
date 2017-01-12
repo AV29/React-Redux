@@ -19,7 +19,7 @@ function setup(saving) {
     props,
     output,
     renderer
-  }
+  };
 }
 
 describe('Course From via React test Utils', () => {

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-did-mount-set-state */
 import React, {PropTypes} from 'react';
 
 class LoadingDots extends React.Component {
@@ -16,7 +17,7 @@ class LoadingDots extends React.Component {
   }
 
   componentWillUnmount() {
-    clearInterval(this.interval)
+    clearInterval(this.interval);
   }
 
   render() {

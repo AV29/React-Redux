@@ -5,7 +5,7 @@ const CourseList=({courses
   }) => {
   "use strict";
   return (
-    <table className='table'>
+    <table className="table">
       <thead>
         <tr>
           <th>&nbsp;</th>
@@ -28,4 +28,4 @@ CourseList.propTypes = {
   courses: PropTypes.array.isRequired
 };
 
-export default CourseList
+export default CourseList;

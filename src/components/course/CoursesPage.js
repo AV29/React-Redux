@@ -50,7 +50,7 @@ function mapStateToProps(state, ownProps) {
   "use strict";
   return  {
     courses: state.courses
-  }
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CoursesPage);
